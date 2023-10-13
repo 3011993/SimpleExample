@@ -7,7 +7,7 @@ data class ProductResponse(
 )
 
 
-fun ProductResponse.asDomainModel(): Product {
+fun ProductResponse.toDomainModel(): Product {
     return Product(
         product = this.productModel?: ""
     )

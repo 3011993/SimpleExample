@@ -3,16 +3,15 @@ package com.example.simpleexample.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.simpleexample.domain.model.Product
 import com.example.simpleexample.data.repos.ProductRepositoryImpl
-import kotlinx.coroutines.launch
+import com.example.simpleexample.presentation.model.ProductUiModel
+import com.example.simpleexample.presentation.model.toProductUi
 
 class MainViewModel(private val repo: ProductRepositoryImpl) : ViewModel() {
 
-    private val _product = MutableLiveData<ProductUi>()
+    private val _product = MutableLiveData<ProductUiModel>()
 
-    val product: LiveData<ProductUi>
+    val product: LiveData<ProductUiModel>
         get() = _product
 
 
